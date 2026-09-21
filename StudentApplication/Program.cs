@@ -1,7 +1,7 @@
 ﻿Student student1 = new Student();
-student1.Name = "Ana";
-student1.Age = 20;
-student1.Career = "Computer Science";
+// student1.Name = "Ana";
+// student1.Age = 20;
+// student1.Career = "Computer Science";
 
 Console.WriteLine($"Student: {student1.Name}");
 Console.WriteLine($"Age: {student1.Age}");
@@ -52,12 +52,7 @@ Book book3 = new Book
     Pages = 235
 };
 
-List<Book> dataBooks = new List<Book>();
-
-dataBooks.Add(book1);
-dataBooks.Add(book2);
-dataBooks.Add(book3);
-
+List<Book> dataBooks = [book1, book2, book3];
 foreach (Book book in dataBooks)
 {
     Console.WriteLine($"{book}");
