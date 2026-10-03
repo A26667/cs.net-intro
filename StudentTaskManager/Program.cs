@@ -40,23 +40,23 @@ while (running) {
     int.TryParse(Console.ReadLine(), out int option); // allows "Enter" to exit (0)
 
     switch (option) {
-        case 1:
+        case (int)TaskOption.Add:
             AddTask(tasks);
             break;
 
-        case 2:
+        case (int)TaskOption.View:
             ShowTasks(tasks);
             break;
 
-        case 3:
+        case (int)TaskOption.Complete:
             CompleteTask(tasks);
             break;
 
-        case 4:
+        case (int)TaskOption.Remove:
             RemoveTask(tasks);
             break;
 
-        case 5:
+        case (int)TaskOption.CalcTime:
             CalculateTime();
             break;
 
@@ -167,9 +167,11 @@ void WriteEnumLines(List<string> strings) {
     }
 }
 
-enum TaskPriority
+enum TaskOption
 {
-    Low,
-    Medium,
-    High
+    Add = 1, // numbered from 1
+    View,
+    Complete,
+    Remove,
+    CalcTime
 }
