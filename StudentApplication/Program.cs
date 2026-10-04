@@ -7,9 +7,7 @@ Console.WriteLine($"Student: {student1.Name}");
 Console.WriteLine($"Age: {student1.Age}");
 Console.WriteLine($"Career: {student1.Career}");
 
-Student student2 = new ();
-student2.Name = "Luis";
-student2.Age = 22;
+Student student2 = new ("Luis", 22);
 student2.Career = "Software Engineering";
 
 Course OOPCourse = new Course
@@ -19,7 +17,8 @@ Course OOPCourse = new Course
     Teacher = "Luis Antonio Beltrán Prieto"
 };
 
-Console.WriteLine($"{student2.Name} is enrolled in the course {OOPCourse.Name}, of {OOPCourse.Credits} credits, teached by {OOPCourse.Teacher}.");
+Console.WriteLine($"{student2.Name} is enrolled in the course {OOPCourse.Name
+    }, of {OOPCourse.Credits} credits, teached by {OOPCourse.Teacher}.");
 
 List<Student> students = new List<Student>();
 
@@ -28,7 +27,9 @@ students.Add(student2);
 
 foreach (Student student in students)
 {
-    Console.WriteLine($"{student.Name} ({student.Age}) - {student.Career}");
+    student.PrintSummary();
+    Console.WriteLine($"{student.Name} can travel with a student discount for {
+        student.TravelDiscountYearsLeft()} more years.");
 }
 
 Book book1 = new Book

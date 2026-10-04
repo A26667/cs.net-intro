@@ -10,4 +10,21 @@ public class Student // public keyword is unnecessary here in C#; but good habit
         Age = 18;
         Career = "None";
     }
+
+    public Student(string name, int age)
+    {
+        Name = name;
+        Age = age;
+        Career = new Student().Career;
+    }
+
+    public void PrintSummary()
+    {
+        Console.WriteLine($"{Name} ({Age}) - {Career}");
+    }
+
+    public int TravelDiscountYearsLeft()
+    {
+        return 26 - Age;
+    }
 }
