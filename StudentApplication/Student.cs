@@ -1,5 +1,8 @@
 public class Student // public keyword is unnecessary here in C#; but good habit for other languages
 {
+    public static int TotalStudents = 0;
+    public static int MaxTravelDiscountAge = 26;
+    
     private string name;
     private int age;
     public string Career;
@@ -9,13 +12,16 @@ public class Student // public keyword is unnecessary here in C#; but good habit
         Name = "Unknown";
         Age = 18;
         Career = "None";
+
+        TotalStudents++;
     }
 
     public Student(string name, int age)
     {
+        Student defaultStudent = new Student();
         Name = name;
         Age = age;
-        Career = new Student().Career;
+        Career = defaultStudent.Career;
     }
 
     public string Name
@@ -43,6 +49,6 @@ public class Student // public keyword is unnecessary here in C#; but good habit
 
     public int TravelDiscountYearsLeft()
     {
-        return 26 - Age;
+        return MaxTravelDiscountAge - Age;
     }
 }

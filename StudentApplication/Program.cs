@@ -10,12 +10,14 @@ Console.WriteLine($"Career: {student1.Career}");
 Student student2 = new ("Luis", 22);
 student2.Career = "Software Engineering";
 
+Course.ShowMessage();
 Course OOPCourse = new Course
 {
     Name = "Object-oriented Programming",
     Credits = 4,
     Teacher = "Luis Antonio Beltrán Prieto"
 };
+Course.ShowMessage();
 
 Console.WriteLine($"{student2.Name} is enrolled in the course {OOPCourse.Name
     }, of {OOPCourse.Credits} credits, teached by {OOPCourse.Teacher}.");
@@ -31,6 +33,8 @@ foreach (Student student in students)
     Console.WriteLine($"{student.Name} can travel with a student discount for {
         student.TravelDiscountYearsLeft()} more years.");
 }
+
+Console.WriteLine("Total students: " + Student.TotalStudents);
 
 Book book1 = new Book
 {
