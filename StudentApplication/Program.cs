@@ -58,3 +58,12 @@ foreach (Book book in dataBooks)
     Console.WriteLine($"{book}");
 }
 
+List<Product> bookProducts =
+[
+    new Product($"{book2.Title}. {book2.Author}", 926.62, 3),
+    new Product($"{book3.Title}. {book3.Author}", 848.64, 2)
+];
+foreach (Product bookProduct in bookProducts)
+{
+    Console.WriteLine($"{bookProduct.Name}: {bookProduct.Price} CZK ({bookProduct.Stock} in stock)");
+}
