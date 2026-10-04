@@ -68,3 +68,24 @@ foreach (Product bookProduct in bookProducts)
 {
     Console.WriteLine($"{bookProduct.Name}: {bookProduct.Price} CZK ({bookProduct.Stock} in stock)");
 }
+
+BankAccount account = new BankAccount("Luis");
+account.ShowBalance();
+bool operationSuccess;
+for (int i = 0; i < 3; i++)
+{
+    operationSuccess = account.Deposit(100);
+    if (operationSuccess)
+    {
+        Console.WriteLine("Deposited 100 CZK.");
+        account.ShowBalance();
+    }
+    operationSuccess = account.Withdraw(200);
+    if (!operationSuccess)
+    {
+        Console.WriteLine("Withdraw operation failed due to insufficient balance.");
+    } else {
+        Console.WriteLine("Withdrawn 200 CZK.");
+        account.ShowBalance();
+    }
+}
