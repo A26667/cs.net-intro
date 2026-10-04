@@ -1,7 +1,7 @@
 ﻿Student student1 = new Student();
-// student1.Name = "Ana";
-// student1.Age = 20;
-// student1.Career = "Computer Science";
+student1.Name = "Ana";
+student1.Age = 20;
+student1.Career = "Computer Science";
 
 Console.WriteLine($"Student: {student1.Name}");
 Console.WriteLine($"Age: {student1.Age}");

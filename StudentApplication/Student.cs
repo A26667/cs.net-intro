@@ -1,7 +1,7 @@
 public class Student // public keyword is unnecessary here in C#; but good habit for other languages
 {
-    public string Name;
-    public int Age;
+    private string name;
+    private int age;
     public string Career;
 
     public Student() // constructor: special method without return value
@@ -18,6 +18,24 @@ public class Student // public keyword is unnecessary here in C#; but good habit
         Career = new Student().Career;
     }
 
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value >= 0)
+            {
+                age = value;
+            }
+        }
+    }
+    
     public void PrintSummary()
     {
         Console.WriteLine($"{Name} ({Age}) - {Career}");
