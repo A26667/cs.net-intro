@@ -10,14 +10,22 @@ Console.WriteLine($"Career: {student1.Career}");
 Student student2 = new ("Luis", 22);
 student2.Career = "Software Engineering";
 
-Course.ShowMessage();
 Course OOPCourse = new Course
 {
     Name = "Object-oriented Programming",
     Credits = 4,
     Teacher = "Luis Antonio Beltrán Prieto"
 };
+List<Course> courses = [
+    OOPCourse,
+    new Course { Name = "Cross Platform Programming", Credits = 4 },
+    new Course { Name = "Advanced Database Systems", Credits = 4 },
+];
 Course.ShowMessage();
+foreach (Course course in courses)
+{
+    Console.WriteLine($"\t> {course.Name} ({course.Credits} ECTS)");
+}
 
 Console.WriteLine($"{student2.Name} is enrolled in the course {OOPCourse.Name
     }, of {OOPCourse.Credits} credits, teached by {OOPCourse.Teacher}.");
