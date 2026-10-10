@@ -78,8 +78,8 @@ void ShowTitle() {
     Console.WriteLine("====================");
 }
 
-void ShowMessage(string message) {
-    Console.WriteLine($"[INFO] {message}");
+void ShowMessage(string message, string type = "INFO") {
+    Console.WriteLine($"[{type}] {message}");
 }
 
 void ShowMenu(List<string> options) {
@@ -94,11 +94,16 @@ int GetCount(List<string> strings) {
 
 void AddTask(List<string> tasks) {
     if (tasks.Count >= MaxTasks) {
-        Console.WriteLine("Maximum number of tasks reached.");
+        ShowMessage("Maximum number of tasks reached.", "ERROR");
         return;
     }
+    
     Console.Write("Enter a new task: ");
     string newTask = Console.ReadLine();
+    if (string.IsNullOrWhiteSpace(newTask)) {
+        ShowMessage("Task cannot be empty.", "ERROR");
+        return;
+    }
     Console.WriteLine("Adding a task...");
     tasks.Add(newTask);
     ShowMessage("Task added.");
@@ -129,7 +134,7 @@ void CompleteTask(List<string> tasks) {
             tasks[taskNumber - 1] += " (completed)"; // number 1 -> index 0
             ShowMessage("Task completed.");
         } else {
-            Console.WriteLine("Invalid task number.");
+            ShowMessage("Invalid task number.", "ERROR");
         }
     }
 }
@@ -143,7 +148,7 @@ void RemoveTask(List<string> tasks) {
             tasks.RemoveAt(taskNumber - 1); // number 1 -> index 0
             ShowMessage("Task removed.");
         } else {
-            Console.WriteLine("Invalid task number.");
+            ShowMessage("Invalid task number.", "ERROR");
         }
     }
 }
