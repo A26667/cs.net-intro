@@ -19,6 +19,8 @@ public abstract class Character
         AttackPower = attackPower;
     }
 
+    protected string BattleCry { get; set; } = "Charge!";
+
     public virtual void TakeDamage(int damage)
     {
         Health -= damage;

@@ -8,7 +8,7 @@ public class Goblin : Character
 
     public override void PerformAttack(Character target)
     {
-        Console.WriteLine($"{Name} slashes with a rusty dagger!");
+        Console.WriteLine($"{Name} shouts '{BattleCry}' and slashes with a rusty dagger!");
         target.TakeDamage(AttackPower);
 
         if (Random.Shared.Next(0, 100) < 30)

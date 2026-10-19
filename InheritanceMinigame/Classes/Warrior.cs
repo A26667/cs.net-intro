@@ -6,11 +6,13 @@ public class Warrior : Character
 {
     public int ShieldBlock { get; set; } = 4;
     
-    public Warrior(string name) : base(name, 120, 15) {}
+    public Warrior(string name) : base(name, 120, 15) {
+        BattleCry = "For the kingdom!";
+    }
 
     public sealed override void PerformAttack(Character target)
     {
-        Console.WriteLine($"{Name} swings a heavy greatsword at {target.Name}!");
+        Console.WriteLine($"{Name} shouts '{BattleCry}' and swings a heavy greatsword at {target.Name}!");
         target.TakeDamage(AttackPower);
     }
 
