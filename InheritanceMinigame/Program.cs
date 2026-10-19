@@ -33,6 +33,19 @@ class Program
         else
             player = new Mage(heroName);
         
+        if (player is Mage)
+            Console.WriteLine("This character is a mage.");
+        if (player is Warrior warrior) // converted variable copy
+            Console.WriteLine($"{warrior.Name} has a shield block of {warrior.ShieldBlock}.");
+        
+        // convert an object to a specific type when it is compatible,
+        // otherwise 'as' returns null (accepted by "?" prefix on data type)
+        Mage? mage = player as Mage;
+        if (mage != null) // "is not null" alternative syntax
+            Console.WriteLine($"{mage.Name} is a mage with {mage.Mana} mana.");
+        else
+            Console.WriteLine("The player is not a Mage.");
+
         Queue<Character> dungeonEnemies = new Queue<Character>();
         dungeonEnemies.Enqueue(new Goblin("Gorg the Sneaky"));
         dungeonEnemies.Enqueue(new Goblin("Zib the Vile"));
