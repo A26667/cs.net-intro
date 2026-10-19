@@ -8,7 +8,7 @@ public class Warrior : Character
     
     public Warrior(string name) : base(name, 120, 15) {}
 
-    public override void PerformAttack(Character target)
+    public sealed override void PerformAttack(Character target)
     {
         Console.WriteLine($"{Name} swings a heavy greatsword at {target.Name}!");
         target.TakeDamage(AttackPower);

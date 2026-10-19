@@ -21,8 +21,15 @@ class Program
         string choice = Console.ReadLine();
 
         Character player;
-        if (choice == "1")
-            player = new Warrior(heroName);
+        if (choice == "1") {
+            Console.WriteLine("\nAre you an Elite Warrior (Blocks and deals double damage)? (Y/N)");
+            choice = Console.ReadLine().ToUpper();
+            
+            if (choice == "Y")
+                player = new EliteWarrior(heroName);
+            else
+                player = new Warrior(heroName);
+        }
         else
             player = new Mage(heroName);
         

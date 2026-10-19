@@ -2,7 +2,7 @@
 
 namespace InheritanceMinigame.Classes;
 
-public class Character
+public abstract class Character
 {
     public string Name { get; set; }
     public int Health { get; set; }
@@ -29,5 +29,5 @@ public class Character
         Console.WriteLine(($"{Name} takes {damage} damage! (HP: {Health}/{MaxHealth})"));
     }
 
-    public virtual void PerformAttack(Character target){}
+    public abstract void PerformAttack(Character target);
 }
