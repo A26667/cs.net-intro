@@ -1,5 +1,6 @@
-public class Teacher
-{
+public class Teacher {
+    public static List<Teacher> All = new List<Teacher>();
+    
     public string Name;
     // (4*) encapsulation for value validation
     private string subject;
@@ -25,7 +26,23 @@ public class Teacher
         }
     }
     
+    public static int Count { get => All.Count; }
+
+    public Teacher() {
+        All.Add(this);
+    }
+
+    public static void ShowAll() {
+        foreach (Teacher teacher in All) {
+            teacher.ShowProfile();
+        }
+    }
+    
     public void ShowProfile() {
         Console.WriteLine($"Teacher of {Subject}: {Name}\nExperience: {YearsOfExperience} years");
+    }
+    
+    public static double AverageYearsExperience {
+        get => All.Average(teacher => teacher.YearsOfExperience);
     }
 }
