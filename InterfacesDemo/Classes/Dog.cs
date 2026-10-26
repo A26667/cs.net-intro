@@ -3,6 +3,7 @@
 using InterfacesDemo.Interfaces;
 
 public class Dog : IAnimal {    // implements this interface
+    // interface method must be specified public in the class where implemented
     public void Speak() {
         Console.WriteLine("Woof!");
     }

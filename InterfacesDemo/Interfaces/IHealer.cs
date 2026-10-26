@@ -1,5 +1,6 @@
 ﻿namespace InterfacesDemo.Interfaces;
 
 public interface IHealer {
-    void Heal(int hp);
+    // names of parameters do not need to match in subclasses' definition
+    void Heal(int healthPoints);
 }

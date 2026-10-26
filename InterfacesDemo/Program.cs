@@ -39,3 +39,4 @@ attacker.Attack();
 // IDefend defender = knight;
 // defender.Attack();
 ((IDefend)knight).Attack();
+((IDefend)attacker).Attack();
