@@ -1,7 +1,7 @@
 ﻿namespace InterfacesDemo.Classes;
 using InterfacesDemo.Interfaces;
 
-public class Mage : ICombatant
+public class Mage : ICombatant, IHealer
 {
     public string Name { get; set; }
     public int Health { get; set; }
@@ -21,5 +21,10 @@ public class Mage : ICombatant
     {
         Health -= damage;
         Console.WriteLine($"{Name} takes {damage} damage.");
+    }
+
+    public void Heal(int hp) {
+        Health += hp;
+        Console.WriteLine($"{Name} recovered {hp} HP.");
     }
 }

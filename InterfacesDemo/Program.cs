@@ -26,5 +26,16 @@ foreach (var fighter in fighters)
 {
     fighter.Attack();
     fighter.Defend();
-    fighter.TakeDamage(10);
+    fighter.TakeDamage(20);
 }
+
+Mage mage = fighters[1] as Mage;
+mage.Heal(15);
+
+Knight knight = new Knight();
+// must explicitly cast to the interface type to invoke the ambiguous method
+IAttack attacker = knight;
+attacker.Attack();
+// IDefend defender = knight;
+// defender.Attack();
+((IDefend)knight).Attack();

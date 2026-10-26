@@ -1,12 +1,9 @@
 ﻿namespace InterfacesDemo.Interfaces;
 
-public interface ICombatant
+public interface ICombatant : ICharacter
 {
-    string Name { get; set; }
-    int Health { get; set; }
     int AttackPower { get; set; }
 
     void Attack();
     void Defend();
-    void TakeDamage(int damage);
 }
