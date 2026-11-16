@@ -2,4 +2,7 @@
   <Folder Name="/backend/">
     <Project Path="backend/BackEnd.API/BackEnd.API.csproj" />
   </Folder>
+  <Folder Name="/frontend/">
+    <Project Path="frontend/Frontend.Web/Frontend.Web.csproj" />
+  </Folder>
 </Solution>
