@@ -1,14 +1,17 @@
 using Frontend.Web.Services;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-Uri? backendURL = new Uri(builder.Configuration["BackEndAPI:BaseURL"]);
+var backendURL = builder.Configuration["BackEndAPI:BaseURL"];
+
+Uri.TryCreate(backendURL, UriKind.Absolute, out var backendUri);
 
 builder.Services.AddHttpClient<ProductApiClient>(client => {
-    client.BaseAddress = backendURL;
+    client.BaseAddress = backendUri;
     client.Timeout = TimeSpan.FromSeconds(15);
 });
 

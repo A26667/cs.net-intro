@@ -7,12 +7,13 @@ public class Product {
     
     [Display(Name = "Product Name")]
     [Required(ErrorMessage = "{0} must be filled in")]
-    public string ProductName { get; set; }
+    public string ProductName { get; set; } = string.Empty;
     
     [Required]
     [MaxLength(255)]
-    public string Category { get; set; }
+    public string Category { get; set; } = string.Empty;
     
+    [Range(0.0, double.MaxValue, ErrorMessage = "Unit price cannot be negative.")]
     [Display(Name = "Unit price")]
     public decimal UnitPrice { get; set; }
     
