@@ -1,0 +1,34 @@
+﻿@page "{id:int}"
+@model Frontend.Web.Pages.Products.DetailsModel
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>Product Details</h1>
+
+@if (Model.ErrorMessage is not null) {
+    <div class="alert alert-danger" role="alert">@Model.ErrorMessage</div>
+} else if (Model.Item is not null) {
+    var product = Model.Item;
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@product.ProductID</dd>
+        
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@product.ProductName</dd>
+        
+        <dt class="col-sm-3">Category</dt>
+        <dd class="col-sm-9">@product.Category</dd>
+        
+        <dt class="col-sm-3">Unit Price</dt>
+        <dd class="col-sm-9">@product.UnitPrice.ToString("N2")</dd>
+
+        <dt class="col-sm-3">Stock</dt>
+        <dd class="col-sm-9">@product.UnitsInStock</dd>
+
+        <dt class="col-sm-3">Discontinued</dt>
+        <dd class="col-sm-9">@(product.Discontinued ? "Yes" : "No")</dd>
+    </dl>
+    
+    <a asp-page="./index">Back to products list</a>
+}

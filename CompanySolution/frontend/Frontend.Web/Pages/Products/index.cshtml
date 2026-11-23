@@ -21,6 +21,7 @@ else {
                 <th scope="col">Unit price</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Discontinued</th>
+                <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +32,9 @@ else {
                     <td>@product.UnitPrice.ToString("N2")</td>
                     <td>@product.UnitsInStock</td>
                     <td>@(product.Discontinued ? "Yes" : "No")</td>
+                    <td>
+                        <a asp-page="./Details" asp-route-id="@product.ProductID">Details</a>
+                    </td>
                 </tr>
             }
             </tbody>
